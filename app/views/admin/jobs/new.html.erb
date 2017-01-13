@@ -1,0 +1,11 @@
+<div class="col-md-4 col-md-offset-4">
+<h1 class="text-center">新增职缺</h1>
+
+<%= simple_form_for [:admin,@job] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+
+  <%= f.submit "Submit", class:"btn btn-primary" %>
+<% end %>
+</div>
