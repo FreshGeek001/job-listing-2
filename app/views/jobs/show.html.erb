@@ -4,4 +4,5 @@
 <p>
   <%= simple_format(@job.description) %>
 </p>
+<%= link_to("提交简历", new_job_resume_path(@job), :style => "font-size: 20px;", class: "btn btn-info")%>
 </div>
