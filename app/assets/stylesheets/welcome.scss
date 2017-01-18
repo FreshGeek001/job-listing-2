@@ -1,3 +1,60 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel-default {
+  width:10cm;
+
+opacity: 0.8;
+/*margin-top:30px;*/
+}
+
+.fullscreen_bg {
+    background-image: image_url('H.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    padding-bottom: 110px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+  }
+  /* Footer styles
+  -------------------------------------------------- */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 30px;
+  }
+  #footer {
+    position: relative;
+    left:-25px;
+    bottom: 0;
+    width: 105%;
+    /* Set the fixed height of the footer here */
+    height: 200px;
+    background:
+    /* color overlay */
+      linear-gradient(
+        rgba(200, 100, 0, 0.45),
+        rgb(38,50,56)
+      ),
+      /* image to overlay */
+      url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);
+  }
+
+
+  /* Custom footer CSS
+  -------------------------------------------------- */
+
+  .container {
+    width: auto;
+    max-width: 800px;
+    padding: 20 0px;
+    padding-top: 20px;
+  }
+  .container .text-muted {
+    margin: 20px 0;
+  }
+  .footertext {
+    color: #ffffff;
+  }
