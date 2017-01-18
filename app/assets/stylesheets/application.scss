@@ -81,15 +81,17 @@
 }
 
 .caption {
-  margin: 30px;
+  margin: 0px;
   text-align: center;
-  top: 20px;
+  top: 0px;
 }
 
 .thumbnail {
     border: 0 none;
     box-shadow: none;
-    margin-top: 60px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    background-color: #E0E0E0;
 }
 
 .navbar-default {
@@ -144,4 +146,9 @@
     margin-right: 10px; //图片和链接文字拉开一点距离
     width: 32px; //定制图片宽度
     height: 32px; //定制图片高度
+}
+
+.company {
+  margin: 0 -15px 20px;
+
 }

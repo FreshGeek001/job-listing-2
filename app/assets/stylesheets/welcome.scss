@@ -8,53 +8,92 @@ opacity: 0.8;
 
 .fullscreen_bg {
     background-image: image_url('H.png');
-    background-repeat:no-repeat;
+    background-repeat:  repeat;
     background-size: cover;
     padding-bottom: 110px;
     margin-left: -15px;
     margin-right: -15px;
 
   }
-  /* Footer styles
-  -------------------------------------------------- */
-  html {
-    position: relative;
-    min-height: 100%;
+
+.container-fluid .fullscreen_bg{
+  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius: 0;//圆角为0
+}
+
+  @import url('http://fonts.googleapis.com/css?family=Lato:300');
+  @import url('http://weloveiconfonts.com/api/?family=entypo');
+
+  * {
+    margin: 0;
+    padding: 0;
   }
+
+  html, body {
+    height: 100%;
+  }
+
   body {
-    /* Margin bottom by footer height */
-    margin-bottom: 30px;
+    background: #ddd;
   }
-  #footer {
-    position: relative;
-    left:-25px;
-    bottom: 0;
-    width: 105%;
-    /* Set the fixed height of the footer here */
-    height: 200px;
-    background:
-    /* color overlay */
-      linear-gradient(
-        rgba(200, 100, 0, 0.45),
-        rgb(38,50,56)
-      ),
-      /* image to overlay */
-      url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);
+
+  .content {
+    padding: 30px;
+    font: 300 40px Lato, sans-serif;
+    text-align: center;
+    color: #999;
+    background: #eee;
+  }
+
+  .footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #fff!important;
+    background-color: #263238!important;
   }
 
 
-  /* Custom footer CSS
-  -------------------------------------------------- */
+  .social {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    line-height: 70px;
+    font-family: Entypo;
+    font-size: 35px;
+    text-align: center;
+    color: #bbb;
+    border-radius: 50%;
+    background: #eee;
+    overflow: hidden;
+    transition: color .3s;
+  }
 
-  .container {
-    width: auto;
-    max-width: 800px;
-    padding: 20 0px;
-    padding-top: 20px;
+  .social:hover {
+    color: #59d;
+    cursor: pointer;
   }
-  .container .text-muted {
-    margin: 20px 0;
-  }
-  .footertext {
-    color: #ffffff;
+
+  .social {
+     text-shadow: rgb(226, 226, 226) 1px 1px,
+      rgb(227, 227, 227) 2px 2px,
+      rgb(227, 227, 227) 3px 3px,
+      rgb(228, 228, 228) 4px 4px,
+      rgb(229, 229, 229) 5px 5px,
+      rgb(229, 229, 229) 6px 6px,
+      rgb(230, 230, 230) 7px 7px,
+      rgb(230, 230, 230) 8px 8px,
+      rgb(231, 231, 231) 9px 9px,
+      rgb(232, 232, 232) 10px 10px,
+      rgb(232, 232, 232) 11px 11px,
+      rgb(233, 233, 233) 12px 12px,
+      rgb(233, 233, 233) 13px 13px,
+      rgb(234, 234, 234) 14px 14px,
+      rgb(235, 235, 235) 15px 15px,
+      rgb(235, 235, 235) 16px 16px,
+      rgb(236, 236, 236) 17px 17px,
+      rgb(236, 236, 236) 18px 18px,
+      rgb(237, 237, 237) 19px 19px,
+      rgb(238, 238, 238) 20px 20px;
   }
