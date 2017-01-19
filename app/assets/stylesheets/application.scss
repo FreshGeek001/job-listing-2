@@ -37,6 +37,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
+  width:103.8%;
 }
 
 .container-fluid .jumbotron{
@@ -112,6 +113,13 @@
    line-height: 30px;//文字行高
 }
 
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #FF6F00;//鼠标放置在链接上的文字颜色
@@ -141,12 +149,6 @@
     color: #212121;
 }
 
-.navbar-brand > img {
-    display: inline-block;	//图片和链接文字显示在同一行
-    margin-right: 10px; //图片和链接文字拉开一点距离
-    width: 32px; //定制图片宽度
-    height: 32px; //定制图片高度
-}
 
 .company {
   margin: 0 -15px 20px;
