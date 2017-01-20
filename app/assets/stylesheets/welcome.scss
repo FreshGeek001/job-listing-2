@@ -34,9 +34,6 @@ opacity: 0.8;
     height: 100%;
   }
 
-  body {
-    background: #ddd;
-  }
 
   .content {
     padding: 30px;
@@ -51,12 +48,11 @@ opacity: 0.8;
     text-align: center;
     color: #fff!important;
     background-color: #263238!important;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width:100%;
-
+    height:100px;
   }
-
 
   .social {
     display: inline-block;
