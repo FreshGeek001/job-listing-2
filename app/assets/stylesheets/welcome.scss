@@ -1,26 +1,12 @@
 
 .panel-default {
-  width:10cm;
+  margin-left: -25px;
+  width:13cm;
 
 opacity: 0.8;
 /*margin-top:30px;*/
 }
 
-.fullscreen_bg {
-    background-image: image_url('H.png');
-    background-repeat:  repeat;
-    background-size: cover;
-    padding-bottom: 110px;
-    margin-left: -15px;
-    margin-right: -15px;
-
-  }
-
-.container-fluid .fullscreen_bg{
-  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
-  border-radius: 0;//圆角为0
-}
 
   @import url('http://fonts.googleapis.com/css?family=Lato:300');
   @import url('http://weloveiconfonts.com/api/?family=entypo');
@@ -31,8 +17,8 @@ opacity: 0.8;
   }
 
   html, body {
-    margin-bottom: 100px; /* 必须和footer的height保持一致 */
-    min-height: 100%;
+    margin-bottom: 70px; /* 必须和footer的height保持一致 */
+    min-height: 80%;
   }
 
 
@@ -45,31 +31,28 @@ opacity: 0.8;
   }
 
   .footer {
+    position: fixed;
     padding: 20px 0;
     text-align: center;
     color: #fff!important;
     background-color: #263238!important;
-    position: fixed;
+
     bottom: 0;
     width:100%;
-    height:100px;
+    height:70px;
     z-index: 1000;
+
+
   }
-
-
-
-
-
-
 
   .social {
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     margin: 0 10px;
-    line-height: 70px;
+    line-height: 40px;
     font-family: Entypo;
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
     color: #bbb;
     border-radius: 50%;

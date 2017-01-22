@@ -1,11 +1,25 @@
-<div class="col-md-12">
+<%= form_tag jobs_path, :method => "get" do %>
+
+      <div class="searchform">
+         <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+         <span>
+             <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbotton" %>
+             <!-- <input type="submit" value="点 击" class="mike"> -->
+          </span>
+      </div>
+   <% end %>
+
+
   <head>
   <style>
-body {
-  background-image: url("/images/722.png");
-  background-repeat: no-repeat;
+
+#image2{
+
+  background-image: url('https://ww1.sinaimg.cn/large/006y8lVajw1fbz7gbupzxj30qo0f0mym.jpg');
+  height:900px;
   background-size: cover;
-}
+  background-repeat: no-repeat;
+  }
 
 #text {
   color: #F9A825;
@@ -20,12 +34,14 @@ body {
 
 .table-default{
   background-color: rgba(250, 250, 250, 0.4);
+
 }
 
 </style>
   </head>
+<body class="background" id="image2">
 
-  <div class="dropdown clearfix pull-right" style="padding-top: 50px; opacity: 0.6">
+  <div class="dropdown clearfix pull-right" style="padding-top: 50px;">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
         <span class="caret"></span>
@@ -44,7 +60,7 @@ body {
         </li>
     </ul>
 </div>
-<body>
+
 <table class="table table-default table-boldered custab">
   <thead id="text" style="color:black">
     <tr>
@@ -52,14 +68,14 @@ body {
       <td>薪资下限</td>
       <td>薪资上限</td>
       <td>创建时间</td>
-      <tr>
+    </tr>
   </thead>
   <tbody id="text2">
   <% @jobs.each do |job| %>
   <tr>
     <td>
       <%= render_job_status(job)%>
-      <%= link_to(job.title, admin_job_path(job), :style => "color:blue") %>
+      <%= link_to(job.title, job_path(job), :style => "color:blue") %>
     </td>
     <td><%= job.wage_lower_bound %></td>
     <td><%= job.wage_upper_bound %></td>
@@ -69,9 +85,9 @@ body {
   </tr>
   <% end %>
 </tbody>
+
 </table>
-<div class="text-center" style="opacity: 0.6">
-  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+<div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>
 </body>
-</div>

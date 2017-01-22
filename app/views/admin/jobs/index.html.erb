@@ -1,73 +1,74 @@
-<div class="col-md-12">
-  <head>
-  <style>
-body {
-  background-image: url("/images/722.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-#text {
-  color: #FAFAFA;
-  font-size: 15px;
-}
+    <head>
+        <style>
+            #image3{
+                background-image: url("https://ww2.sinaimg.cn/large/006y8lVagy1fbz8y4r97gj30qo0fijtx.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 900px;
+            }
 
-#text2{
-  color: #FFF3E0
-}
+            #text {
+                color: #FAFAFA;
+                font-size: 15px;
+            }
 
-.table-default{
-  background-color: rgba(250, 250, 250, 0.4);
-}
+            #text2 {
+                color: #FFF3E0;
+            }
 
+            .table-default {
+                background-color: rgba(250, 250, 250, 0.4);
+            }
 
+        </style>
+    </head>
+    <body class="background" id="image3">
 
-
-</style>
-  </head>
-<body>
-<table class="table table-default table-boldered custab">
-  <thead id="text" style="color:black">
-    <tr>
-      <td>职缺</td>
-      <td>收到简历数量</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>管理选项</td>
-      <td>创建时间</td>
-      <tr>
-  </thead>
-  <tbody id="text2">
-  <% @jobs.each do |job| %>
-  <tr>
-    <td>
-      <%= render_job_status(job)%>
-      <%= link_to(job.title, admin_job_path(job), :style => "color:blue") %>
-    </td>
-    <td><%= link_to(job.resumes.count, admin_job_resumes_path(job), :style => "color:blue")%></td>
-    <td><%= job.wage_lower_bound %></td>
-    <td><%= job.wage_upper_bound %></td>
-    <td>
-      <%= link_to edit_admin_job_path(job), :class => "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
-      <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger",
-        :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
-      <% if job.is_hidden %>
-      <%= link_to publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success" do%>
-        <i class="fa fa-eye"></i><% end %>
-      <% else %>
-      <%= link_to hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning " do%>
-        <i class="fa fa-eye-slash"></i><% end %>
-      <% end %>
-    </td>
-    <td>
-      <%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %>
-    </td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
-<div class="text-center">
-  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
-</div>
-</body>
-</div>
+      <div class="col-md-12">
+        <table class="table table-default table-boldered custab">
+            <thead id="text" style="color:black">
+                <tr>
+                    <td>职缺</td>
+                    <td>收到简历数量</td>
+                    <td>薪资下限</td>
+                    <td>薪资上限</td>
+                    <td>管理选项</td>
+                    <td>创建时间</td>
+                    <tr></thead>
+                    <tbody id="text2">
+                        <% @jobs.each do |job| %>
+                        <tr>
+                            <td>
+                                <%= render_job_status(job)%>
+                                <%= link_to(job.title, admin_job_path(job), :style => "color:blue") %>
+                            </td>
+                            <td><%= link_to(job.resumes.count, admin_job_resumes_path(job), :style => "color:blue")%></td>
+                            <td><%= job.wage_lower_bound %></td>
+                            <td><%= job.wage_upper_bound %></td>
+                            <td>
+                                <%= link_to edit_admin_job_path(job), :class => "btn btn-xs btn-info" do %>
+                                <i class="fa fa-pencil"></i><% end %>
+                                <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger",
+        :data => { :confirm => "Are you sure?" } do %>
+                                <i class="fa fa-trash-o"></i><% end %>
+                                <% if job.is_hidden %>
+                                <%= link_to publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success" do%>
+                                <i class="fa fa-eye"></i><% end %>
+                            <% else %>
+                                <%= link_to hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning " do%>
+                                <i class="fa fa-eye-slash"></i><% end %>
+                                <% end %>
+                            </td>
+                            <td>
+                                <%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %>
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+                </div>
+            </body>
+        </div>
