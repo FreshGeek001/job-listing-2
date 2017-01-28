@@ -6,20 +6,20 @@ class Job < ApplicationRecord
 
   def publish!
     self.is_hidden = false
-    self.save
+    save
   end
 
   def hide!
     self.is_hidden = true
-    self.save
+    save
   end
 
-scope :published, -> { where(is_hidden: false) }
-scope :recent, -> { order("created_at DESC") }
+  scope :published, -> { where(is_hidden: false) }
+  scope :recent, -> { order('created_at DESC') }
 
-has_many :resumes
+  has_many :resumes
 
-def self.search(search)
-     where("title LIKE ?", "%#{search}%").or(where("description LIKE ?", "%#{search}%"))
-  end
+  def self.search(search)
+    where('title LIKE ?', "%#{search}%").or(where('description LIKE ?', "%#{search}%")).or(where('location LIKE ?', "%#{search}%"))
+    end
 end
