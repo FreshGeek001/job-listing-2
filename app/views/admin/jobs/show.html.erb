@@ -1,7 +1,9 @@
-
-<h1 align="center"> <%= @job.title %> </h1>
+<h1 align="center">
+  <%= @job.title %>
+</h1>
 
 <p>
   <%= simple_format(@job.description) %>
+  <%= @job.location %>
 
 </p>

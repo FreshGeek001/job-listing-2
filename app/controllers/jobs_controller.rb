@@ -11,14 +11,14 @@ class JobsController < ApplicationController
               Job.published.recent.published.search(params[:search])
             end
 
-    @jobs = @jobs.paginate(:page => params[:page], :per_page => 10)
+    @jobs = @jobs.paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @job = Job.find(params[:id])
 
     if @job.is_hidden
-      flash[:warning]="This job already archieved"
+      flash[:warning] = 'This job already archieved'
       redirect_to root_path
     end
   end
@@ -32,7 +32,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to jobs_path
     else
-    render :new
+      render :new
     end
   end
 
@@ -43,7 +43,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to jobs_path, notice:"更新成功！"
+      redirect_to jobs_path, notice: '更新成功！'
     else
       render :edit
     end
@@ -52,12 +52,12 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to jobs_path, alert: "删除成功！"
+    redirect_to jobs_path, alert: '删除成功！'
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
+    params.require(:job).permit(:title, :description, :location, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 end

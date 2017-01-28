@@ -1,7 +1,7 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
-  layout "admin"
+  layout 'admin'
 
   def show
     @job = Job.find(params[:id])
@@ -9,7 +9,7 @@ class Admin::JobsController < ApplicationController
 
   def index
     @jobs = Job.all
-    @jobs = @jobs.paginate(:page => params[:page], :per_page => 14)
+    @jobs = @jobs.paginate(page: params[:page], per_page: 14)
   end
 
   def new
@@ -62,6 +62,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description,:wage_lower_bound, :wage_upper_bound,:contact_email,:is_hidden)
+    params.require(:job).permit(:title, :description, :location, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
   end
 end
