@@ -20,6 +20,6 @@ class Job < ApplicationRecord
   has_many :resumes
 
   def self.search(search)
-    where('title LIKE ?', "%#{search}%").or(where('description LIKE ?', "%#{search}%")).or(where('location LIKE ?', "%#{search}%"))
+    where('title LIKE ?', "%#{search}%").or(where('description LIKE ?', "%#{search}%")).or(where('location LIKE ?', "%#{search}%")).or(where('company LIKE ?', "%#{search}%"))
     end
 end

@@ -7,11 +7,11 @@ jobs_info = [['Web Application Developer', 'Creates, maintains and implements we
 
 puts 'this seed will create an admin account automatically, 10 public jobs, and 10 hidden jobs'
 
-create_account = User.create([email: 'memory2026@126.com', password: '123456', password_confirmation: '123456', is_admin: 'true'])
+create_account = User.create([email: 'a@a.com', password: '111111', password_confirmation: '111111', is_admin: 'true'])
 
 puts 'Admin account created.'
 
-create_account_user = User.create([email: 'b@b.com', password: '123456', password_confirmation: '123456', is_admin: 'false'])
+create_account_user = User.create([email: 'b@b.com', password: '111111', password_confirmation: '111111', is_admin: 'false'])
 
 puts 'User account created.'
 
@@ -19,7 +19,7 @@ create_jobs = for i in 1..30 do
                 job_test = jobs_info[rand(0..4)]
                 company_test = company_info[rand(0..8)]
                 Job.create!([title: job_test[0], description: job_test[1], wage_upper_bound: rand(50..99) * 100,
-                             wage_lower_bound: rand(10..49) * 100, is_hidden: 'false', location: company_test[1]])
+                             wage_lower_bound: rand(10..49) * 100, is_hidden: 'false', location: company_test[1], company: company_test[0]])
 end
 
 puts '30 Public jobs created.'
@@ -28,7 +28,7 @@ create_jobs = for i in 1..30 do
                 job_test = jobs_info[rand(0..4)]
                 company_test = company_info[rand(0..8)]
                 Job.create!([title: job_test[0], description: job_test[1], wage_upper_bound: rand(50..99) * 100,
-                             wage_lower_bound: rand(10..49) * 100, is_hidden: 'true', location: company_test[1]])
+                             wage_lower_bound: rand(10..49) * 100, is_hidden: 'true', location: company_test[1], company: company_test[0]])
 end
 
 puts '30 Hidden jobs created.'
