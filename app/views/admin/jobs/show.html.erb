@@ -1,9 +1,54 @@
-<h1 align="center">
-  <%= @job.title %>
-</h1>
+<head>
+  <style>
+#image6 {
 
-<p>
-  <%= simple_format(@job.description) %>
-  <%= @job.location %>
+  background-image: url('https://ww1.sinaimg.cn/large/006y8lVajw1fbz7gbupzxj30qo0f0mym.jpg');
+  height: 780px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin:0 -15px;
+}
 
-</p>
+.background {
+  padding-top:150px;
+}
+
+.panel {
+  margin:0 auto;
+}
+
+.panel-default {
+  width: 20cm;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.panel p {
+  text-align: left;
+}
+</style>
+</head>
+
+<div class="background" id="image6">
+  <div class="panel panel-default">
+      <div class="panel-heading " >
+          <h1><%= @job.title %></h1>
+          </div>
+
+      <div class="panel-body">
+          <div class="trix-content">
+              <p>
+                <%= simple_format(@job.description) %>
+                Company
+                <%= @job.company%>
+                Location:
+                <%= @job.location%>
+                <br>
+                Salary:
+                <%= @job.wage_lower_bound%>
+                ~
+                <%= @job.wage_upper_bound%>
+              </p>
+          </div>
+        </div>
+</div>

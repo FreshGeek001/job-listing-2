@@ -46,8 +46,8 @@
 }
 
 .jumbotron p {
-  margin-top: 100px;
-  font-size: 26px; //字体大小
+  margin-top: 150px;
+  font-size: 30px; //字体大小
   text-align: center; //文字左对齐
   color: #EEEEEE; //字体颜色
   font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
@@ -58,6 +58,11 @@
   margin-bottom: 60px;
   text-align: center;
   color: white;
+}
+
+.jumbotron .btn-lg {
+  width: 150px;
+  font-size: 25px;
 }
 
 .navbar-default {
@@ -116,11 +121,13 @@
 
 .promise {
   height: 500px;
-  background-color: rgb(66,66,66);
+  background: #616161;
+  background: linear-gradient(#616161, #9E9E9E);
   margin: 0 -15px;
   border-top: 1px solid #d64842;
   padding: 3em;
   font-family: "Times New Roman",Georgia,Serif;
+  border-bottom: 1px solid #d64842;
 }
 
 .promise h2 {
@@ -132,6 +139,7 @@
 .promise img {
   width: 250px;
   height: 200px;
+  border-radius: 10px;
 }
 
 .promise .pic {
@@ -151,4 +159,96 @@
 .promise p {
   color: #EEEEEE;
   text-align: center;
+}
+
+.logo {
+  height: 450px;
+  padding: 3em;
+  border-bottom: 2px solid #d64842;
+  margin: 0 -15px;
+}
+
+.logo .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo h2 {
+  text-align: center;
+  color: #666;
+}
+
+#apple img {
+  width: 250px;
+  height: 200px;
+  margin-right: -10px;
+}
+
+#sumsung img {
+  width: 250px;
+  height: 250px;
+}
+
+#huawei img {
+  width: 150px;
+  height: 150px;
+  margin: 0 40px;
+}
+
+#ibm img {
+  width: 150px;
+  height: 150px;
+}
+
+#hp img {
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+}
+
+.users {
+  height: 500px;
+  background: #9E9E9E;
+  background: linear-gradient(#9E9E9E, #616161);
+  margin: 0 -15px;
+  padding: 3em;
+  font-family: "Times New Roman",Georgia,Serif;
+  border-bottom: 1px solid #d64842;
+}
+
+.users .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.users h2 {
+  text-align: center;
+  color: #EEEEEE;
+}
+
+.users .pic {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.users .pic img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+}
+
+.users p {
+  text-align: center;
+  color: #EEEEEE;
+  margin-top: 20px;
+}
+
+.users .push {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.users .btn-lg {
+  height: 50px;
+  width: 200px;
 }

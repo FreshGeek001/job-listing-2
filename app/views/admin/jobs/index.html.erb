@@ -2,10 +2,12 @@
     <head>
         <style>
             #image3{
+                position: relative;
                 background-image: url("https://ww2.sinaimg.cn/large/006y8lVagy1fbz8y4r97gj30qo0fijtx.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
-                height: 900px;
+                height: 800px;
+                margin:0 -15px;
             }
 
             #text {
@@ -20,10 +22,14 @@
             .table-default {
                 background-color: rgba(250, 250, 250, 0.4);
             }
+            .background {
+              height:780px;
+            }
 
         </style>
     </head>
-    <body class="background" id="image3">
+    <body>
+      <div class="background" id="image3">
 
       <div class="col-md-12">
         <table class="table table-default table-boldered custab">
@@ -70,5 +76,6 @@
                 <div class="text-center">
                     <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
                 </div>
+              </div>
+            </div>
             </body>
-        </div>
