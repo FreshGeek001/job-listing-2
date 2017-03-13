@@ -37,62 +37,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
-  width: 103.8%;
 }
 
 .container-fluid .jumbotron {
   padding-bottom: 110px; //内部的底部边距，这样按钮不会很靠近底部了
-  margin: 0 -15px 20px; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  margin: 0 -15px; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding)
   border-radius: 0; //圆角为0
 }
 
-.title {
-  margin-top: 100px; //和顶部拉开距离
-  margin-bottom: 0; //这样就可以紧接息面的描述文字
-  border-top-right-radius: 3px; //右上角圆边
-  border-top-left-radius: 3px; //左上角圆边
-  font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
-  font-size: 5em;
-}
-
-.jumbotron h2 {
-  text-align: center; //文字左对齐
-  color: #EEEEEE; //字体颜色
-}
-
 .jumbotron p {
-  margin: 0; //上下左右margin为0
+  margin-top: 100px;
   font-size: 26px; //字体大小
   text-align: center; //文字左对齐
   color: #EEEEEE; //字体颜色
-  border-bottom-right-radius: 3px; //右下角圆边
-  border-bottom-left-radius: 3px; //左下角圆边
   font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
 }
 
 .lead {
+  margin-top: 100px;
   margin-bottom: 60px;
   text-align: center;
   color: white;
 }
 
-.caption {
-  margin: 0;
-  text-align: center;
-  top: 0;
-}
-
-.thumbnail {
-  border: 0 none;
-  box-shadow: none;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
 .navbar-default {
   background-color: #263238; //背景颜色
-  border-color: #263238; //边框色
   margin-bottom: 0; //底部 margin 不撑开距离
+  border-bottom: 1px solid #d64842;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -115,7 +86,7 @@
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
-  color: #FF6F00; //鼠标放置在链接上的文字颜色
+  color: #d64842; //鼠标放置在链接上的文字颜色
   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
 }
 
@@ -125,14 +96,14 @@
 
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  color: #FF6F00;
+  color: #d64842;
   background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
-  color: #FF6F00;
+  color: #d64842;
   background-color: #FFE0B2;
 }
 
@@ -143,7 +114,41 @@
   color: #212121;
 }
 
-.company {
-  margin: 0 -15px 20px;
-  background-color: #A1887F;
+.promise {
+  height: 500px;
+  background-color: rgb(66,66,66);
+  margin: 0 -15px;
+  border-top: 1px solid #d64842;
+  padding: 3em;
+  font-family: "Times New Roman",Georgia,Serif;
+}
+
+.promise h2 {
+  color: #EEEEEE;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.promise img {
+  width: 250px;
+  height: 200px;
+}
+
+.promise .pic {
+  text-align: center;
+}
+
+.promise .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promise h3 {
+  color: #EEEEEE;
+  text-align: center;
+}
+
+.promise p {
+  color: #EEEEEE;
+  text-align: center;
 }
